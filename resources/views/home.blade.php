@@ -26,7 +26,7 @@
                     <div class="container">
                         <div class="product-items">
                             @foreach($products as $product)
-                                <a href="#" class="card">
+                                <a href="{{ route('shop.show',$product->slug) }}" class="card">
                                     <div class="card-image">
                                         <img src="/img/alienware-front.png" alt="product">
                                         <img src="/img/alienware-back.png" alt="product">
@@ -44,6 +44,9 @@
                                     </div>
                                 </a>
                             @endforeach
+                                <div class="view-more">
+                                    <a href="{{ route('shop.index') }}" class="btn btn-white btn-default">View More</a>
+                                </div>
                         </div>
                     </div>
                 </div>

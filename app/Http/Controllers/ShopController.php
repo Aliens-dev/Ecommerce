@@ -15,7 +15,7 @@ class ShopController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('shop',compact('products'));
+        return view('shop.index',compact('products'));
     }
 
     /**
@@ -45,9 +45,10 @@ class ShopController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $product = Product::where('slug',$slug)->first();
+        return view('shop.shop',compact('product'));
     }
 
     /**
